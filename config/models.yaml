@@ -1,0 +1,49 @@
+# 模型接入层：角色-模型路由表（DESIGN.md §15）
+# 业务代码只按角色拿模型；fallback 链在此配置；实际使用的模型会写入 trace。
+
+roles:
+  judge:                # eval 判定：温度归零，输出契约 pass/fail/unable
+    primary: claude-sonnet-4
+    fallback: [gpt-5, gemini-2.5-pro]
+    timeout_s: 120
+    temperature: 0
+    stream: false       # judge 一律非流式
+
+  advisor:              # 顾问对话：给人看，可流式
+    primary: kimi-k2
+    fallback: [claude-sonnet-4]
+    timeout_s: 180
+    temperature: 0.7
+    stream: true
+
+  extractor:            # 槽位提取：结构化输出，温度归零
+    primary: claude-sonnet-4
+    fallback: [gpt-5]
+    timeout_s: 60
+    temperature: 0
+    stream: false
+
+  challenger:           # 交叉验证第二裁判（必须跨厂商，DESIGN.md §11）
+    primary: gpt-5
+    fallback: [gemini-2.5-pro]
+    timeout_s: 120
+    temperature: 0
+    stream: false
+
+# 每 provider 并发与限速（令牌桶）
+providers:
+  anthropic: { max_concurrency: 4, rpm: 50 }
+  openai:    { max_concurrency: 4, rpm: 50 }
+  google:    { max_concurrency: 4, rpm: 60 }
+  moonshot:  { max_concurrency: 4, rpm: 60 }
+
+# 重试：指数退避+全抖动，sleep = random(0, min(2^n, 60s))，最多 5 次
+retry:
+  max_attempts: 5
+  backoff_cap_s: 60
+  retryable: [429, 500, 502, 503, 504, timeout, connection_error]
+
+timeouts:
+  connect_s: 10
+  stream_idle_s: 30
+  total_deadline_s: 300

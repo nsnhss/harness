@@ -1,0 +1,10 @@
+# 示例原子检查项（DESIGN.md §8.1）
+# 格式铁律：一句话、可证伪、二元判断、声明证据要求。
+id: TC-0001
+target: 跳跃手感
+check: 按下跳跃键后角色在 100ms 内离地
+method: auto            # auto=脚本 / ai=AI判定 / human=人工确认
+evidence: [input_log, frame_timestamps]
+expect: pass
+status: active          # active / deprecated（只增不删，废弃标记不删除）
+source: 手写示例         # 出处：手写 / 案例ID / LLM生成（待审）

@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
+
+# 环境
+.env
+*.local
+
+# 本地运行产物（大体积/含隐私，不入库）
+runs/*
+!runs/.gitkeep
+consult_sessions/*
+!consult_sessions/.gitkeep
+
+# IDE
+.idea/
+.vscode/

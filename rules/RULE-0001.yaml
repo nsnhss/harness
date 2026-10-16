@@ -1,0 +1,9 @@
+id: RULE-0001
+rule: 新手第一个项目范围不得超过 2 周可完成的原型
+scope: [advisor]
+source:
+  case_id: bootstrap
+  quote: "顾问层设计讨论中确立的基线约束"
+created: 2026-10-15
+status: active
+recurrence: 0            # 基线规则，用户显式确立，豁免 recurrence 闸门

@@ -1,0 +1,40 @@
+# 顾问层意图槽位 schema（DESIGN.md §22）
+# 铁律：每个槽位允许 null（未知）——宁可追问，不许瞎编。
+
+slots:
+  game_type:        # 大类枚举，可扩展
+    type: enum
+    values: [平台跳跃, 类银河战士恶魔城, ARPG, JRPG, SLG, AVG, 肉鸽, 模拟经营,
+             FPS, TPS, 解谜, 塔防, 卡牌, 音游, 沙盒, 恐怖, 派对, 其他]
+  dimension:
+    type: enum
+    values: ["2D", "2.5D", "3D"]
+  perspective:
+    type: enum
+    values: [横版, 俯视角, 等距, 第一人称, 第三人称, 固定镜头, 其他]
+  platform:
+    type: multi_enum
+    values: [PC, 移动, 主机, 网页]
+  team_size:        { type: int, min: 1 }
+  skill_code:       { type: enum, values: [无基础, 脚本级, 工程级] }
+  skill_art:        { type: enum, values: [无基础, 能自绘, 有美术] }
+  timeline_days:    { type: int }      # 归一化："三个月"→90，"半年"→180
+  budget:           { type: string }   # 归一化金额或"零预算"
+  monetization:     { type: enum, values: [买断, F2P, 广告, 订阅, 用爱发电, 未定] }
+  reference_games:  { type: list }     # 链接 game_analysis 拆解库；模糊时列候选让用户选
+  core_loop:        { type: string }   # 一两句话
+  scope_signals:    { type: list }     # 危险体量信号词（人工维护词表匹配）
+
+# 危险体量信号词表（触发体量警告，必须稳定可回归，故用词表不用 LLM 判断）
+scope_signal_words: [开放世界, 多人联机, MMO, 无缝地图, 全语音, 3A, 网游, 上百小时]
+
+# 追问优先级：对决策树影响权重从高到低；每轮最多问 2-3 个
+ask_priority: [game_type, dimension, team_size, skill_code, timeline_days, platform,
+               skill_art, monetization, budget]
+
+# 矛盾检测规则示例（规则库正式条目见 rules/）
+conflict_checks:
+  - { when: "team_size <= 1 and '开放世界' in scope_signals", warn: 体量冲突：单人难以承担开放世界 }
+  - { when: "timeline_days <= 90 and dimension == '3D' and '主机' in platform",
+      warn: 周期不现实：90 天内完成主机 3D 项目风险极高 }
+  - { when: "skill_code == '无基础' and dimension == '3D'", warn: 能力错配：建议先从 2D 入门 }

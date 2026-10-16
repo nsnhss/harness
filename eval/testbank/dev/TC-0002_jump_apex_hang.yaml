@@ -1,0 +1,9 @@
+# 示例原子检查项：需人工判定的主观项
+id: TC-0002
+target: 跳跃手感
+check: 跳跃到达最高点时有可感知的悬停感（约 3 帧以上）
+method: human           # 手感类：前期只能用户判，AI 永不做主（直至毕业）
+evidence: [screen_recording]
+expect: pass
+status: active
+source: 手写示例
