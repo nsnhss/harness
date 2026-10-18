@@ -1,0 +1,9 @@
+id: TC-0014
+target: 分辨率适配
+check: 16:9 与 21:9 分辨率下无 UI 元素溢出屏幕
+method: ai
+evidence:
+- screenshots
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）

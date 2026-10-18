@@ -15,6 +15,7 @@ runs/*
 !runs/.gitkeep
 consult_sessions/*
 !consult_sessions/.gitkeep
+advise/
 
 # IDE
 .idea/

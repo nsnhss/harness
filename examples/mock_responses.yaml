@@ -1,0 +1,10 @@
+# MockAdapter 罐装响应：按检查项 ID 匹配（prompt 中出现的第一个 TC-XXXX）
+TC-0002:
+  verdict: pass
+  evidence_refs: ["screen_recording.txt", "frame_timestamps.json"]
+  reason: "录屏与帧数据表明顶点悬停约4帧，满足≥3帧"
+
+default:
+  verdict: unable
+  evidence_refs: []
+  reason: "mock 无匹配响应"

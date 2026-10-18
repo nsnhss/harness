@@ -3,31 +3,38 @@
 
 roles:
   judge:                # eval 判定：温度归零，输出契约 pass/fail/unable
-    primary: claude-sonnet-4
-    fallback: [gpt-5, gemini-2.5-pro]
+    primary: deepseek-chat
+    fallback: []        # 当前仅 DeepSeek 一家有 key，fallback 待接入第二厂商
     timeout_s: 120
     temperature: 0
     stream: false       # judge 一律非流式
 
   advisor:              # 顾问对话：给人看，可流式
-    primary: kimi-k2
-    fallback: [claude-sonnet-4]
+    primary: deepseek-chat
+    fallback: []
     timeout_s: 180
     temperature: 0.7
     stream: true
 
   extractor:            # 槽位提取：结构化输出，温度归零
-    primary: claude-sonnet-4
-    fallback: [gpt-5]
+    primary: deepseek-chat
+    fallback: []
     timeout_s: 60
     temperature: 0
     stream: false
 
   challenger:           # 交叉验证第二裁判（必须跨厂商，DESIGN.md §11）
-    primary: gpt-5
+    primary: gpt-5      # 未接入，待第二家 key
     fallback: [gemini-2.5-pro]
     timeout_s: 120
     temperature: 0
+    stream: false
+
+  generator:            # 出题器：LLM 生成候选用例（§14.1，期望答案永远人定）
+    primary: deepseek-chat
+    fallback: []
+    timeout_s: 180
+    temperature: 0.7
     stream: false
 
 # 每 provider 并发与限速（令牌桶）

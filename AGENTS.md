@@ -33,6 +33,7 @@ game_analysis/   相近游戏拆解库（七维模板）
 eval/testbank/   题库：dev/ 日常、golden/ 冻结、canary/ 诱饵
 prompts/         版本化 prompt（<role>/vN.md）
 runs/            运行记录（本地产物，gitignore）
+advise/          顾问咨询产物（本地产物，gitignore）
 consult_sessions/ 顾问会话状态（本地产物，gitignore）
 src/harness_core/ 框架代码（MIT）
 scripts/         自动化脚本

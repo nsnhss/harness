@@ -1,0 +1,9 @@
+id: TC-0016
+target: '[A类] 结构完整性'
+check: 方案包含核心循环/引擎推荐/体量评估/风险清单/里程碑五个章节
+method: auto
+evidence:
+- recommendation.md
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）

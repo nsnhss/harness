@@ -1,0 +1,9 @@
+id: TC-0020
+target: '[A类] 引用纪律'
+check: 引用规则/拆解条目必须带 ID（RULE-xxxx/GA-xxxx），否则须声明无参考
+method: ai
+evidence:
+- recommendation.md
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）

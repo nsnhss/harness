@@ -1,0 +1,9 @@
+id: TC-0006
+target: UI 可读性
+check: 1080p 分辨率下所有正文文本字号 ≥14px
+method: ai
+evidence:
+- screenshots
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）

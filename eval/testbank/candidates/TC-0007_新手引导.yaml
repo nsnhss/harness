@@ -1,0 +1,10 @@
+id: TC-0007
+target: 新手引导
+check: 首次启动游戏 3 分钟内出现操作引导
+method: human
+evidence:
+- screen_recording
+expect: pass
+status: rejected
+source: LLM生成（kimi-cli 外壳，待审）
+review_note: 具体游戏具体分析，部分游戏比如文字类的galgame或其他类似的不需要引导，又或者部分游戏会有开头故事，没有这么快进入引导环节

@@ -1,0 +1,11 @@
+id: TC-0026
+target: 顾问层方案可执行性（UI）
+check: 方案中描述的 UI 交互流程与现有界面原型截图一致，不存在方案要求但原型中不存在的控件
+method: human
+evidence:
+- advisor_plan.md
+- ui_prototype_screenshots
+expect: pass
+status: rejected
+source: LLM生成（deepseek-chat，待审）
+review_note: 顾问层还在讨论，不存在任何现有界面

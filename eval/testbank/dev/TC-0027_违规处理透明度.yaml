@@ -1,0 +1,10 @@
+id: TC-0027
+target: 违规处理透明度
+check: recommendation.md 中明确说明或回应了 slots.json 的 _violations 记录中的每一条违规项
+method: ai
+evidence:
+- slots.json
+- recommendation.md
+expect: pass
+status: active
+source: LLM生成（deepseek-chat，待审）

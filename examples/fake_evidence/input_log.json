@@ -1,0 +1,6 @@
+[
+  {"t_ms": 1000, "event": "press_jump"},
+  {"t_ms": 1080, "event": "player_airborne"},
+  {"t_ms": 2500, "event": "press_jump"},
+  {"t_ms": 2560, "event": "player_airborne"}
+]

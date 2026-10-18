@@ -1,0 +1,8 @@
+{
+  "fps": 60,
+  "jump_press_frame": 60,
+  "airborne_frame": 65,
+  "apex_frame": 90,
+  "apex_hold_frames": 4,
+  "landing_frame": 120
+}

@@ -1,0 +1,10 @@
+id: TC-0022
+target: 稳定性
+check: 顾问层 LLM 对同一输入连续请求 10 次，返回内容均不含未捕获异常堆栈或空响应
+method: auto
+evidence:
+- llm_request_log
+- llm_response_log
+expect: pass
+status: active
+source: LLM生成（deepseek-chat，待审）

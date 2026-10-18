@@ -1,0 +1,11 @@
+id: TC-0011
+target: 碰撞完整性
+check: 角色以最大速度移动时不穿透任何墙体
+method: ai
+evidence:
+- physics_log
+- screen_recording
+expect: pass
+status: rejected
+source: LLM生成（kimi-cli 外壳，待审）
+review_note: 具体情况具体分析，还是要看作者自身需求

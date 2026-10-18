@@ -1,0 +1,12 @@
+id: TC-0029
+target: 推荐依据可追溯性
+check: recommendation.md 中引擎推荐的理由能在 calls/call-*.json 的模型响应中找到对应出处，而非凭空新增
+method: ai
+evidence:
+- recommendation.md
+- calls/call-*.json
+expect: pass
+status: rejected
+source: LLM生成（deepseek-chat，待审）
+review_note: 语义循环——方案本来就是 advisor的响应，"在响应里找方案的出处"是套娃；证据路径错误——calls/ 在 evidence 目录外面，装配器读不到，必判
+  unable。建议改写成"引擎推荐的理由与slots.json 中用户约束有对应关系"

@@ -1,0 +1,10 @@
+id: TC-0021
+target: '[A类] 提取保真'
+check: idea.txt 中用户明确陈述的约束，在 slots.json 中不得为 null
+method: ai
+evidence:
+- idea.txt
+- slots.json
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）

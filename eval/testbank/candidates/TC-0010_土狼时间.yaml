@@ -1,0 +1,11 @@
+id: TC-0010
+target: 土狼时间
+check: 走出平台边缘后 100ms 内仍可成功起跳
+method: human
+evidence:
+- screen_recording
+- input_log
+expect: pass
+status: rejected
+source: LLM生成（kimi-cli 外壳，待审）
+review_note: 看作者需求

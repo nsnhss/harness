@@ -1,0 +1,10 @@
+id: TC-0003
+target: 帧率稳定性
+check: 目标场景连续运行 5 分钟，平均帧率 ≥60 且 1% low ≥50
+method: ai
+evidence:
+- fps_log
+expect: pass
+status: rejected
+source: LLM生成（kimi-cli 外壳，待审）
+review_note: 说的不清除，没有前提条件，没指明游戏内设置的是60还是120帧或是更高

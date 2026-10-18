@@ -1,0 +1,9 @@
+id: TC-0004
+target: 内存泄漏
+check: 反复切换场景 10 次后，内存增长 ≤5%
+method: ai
+evidence:
+- memory_log
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）

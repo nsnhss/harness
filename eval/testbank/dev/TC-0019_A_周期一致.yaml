@@ -1,0 +1,10 @@
+id: TC-0019
+target: '[A类] 周期一致'
+check: 体量评估不得与 timeline_days 明显矛盾（如 90 天规划超过 3 个系统）
+method: ai
+evidence:
+- slots.json
+- recommendation.md
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）

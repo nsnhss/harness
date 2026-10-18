@@ -1,0 +1,12 @@
+id: TC-0024
+target: 顾问层方案诚实度（稳定性）
+check: 方案中声明的所有“已修复”稳定性缺陷均能在提交记录或测试报告中找到对应的复现-修复证据，不存在仅口头声称已修复的条目
+method: ai
+evidence:
+- advisor_plan.md
+- commit_log
+- test_report
+expect: pass
+status: rejected
+source: LLM生成（deepseek-chat，待审）
+review_note: 现在还没到代码阶段，不存在修复缺陷，commit_log、test_report 这些证据在顾问场景不存在

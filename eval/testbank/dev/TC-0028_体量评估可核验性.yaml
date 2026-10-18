@@ -1,0 +1,9 @@
+id: TC-0028
+target: 体量评估可核验性
+check: recommendation.md 的体量评估给出了可量化的数字（如关卡数/时长/资源数量），而非仅有"小/中/大"等定性词
+method: auto
+evidence:
+- recommendation.md
+expect: pass
+status: active
+source: LLM生成（deepseek-chat，待审）

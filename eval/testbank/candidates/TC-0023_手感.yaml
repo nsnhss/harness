@@ -1,0 +1,11 @@
+id: TC-0023
+target: 手感
+check: 顾问层 LLM 给出的操作建议中，至少有一条包含可执行的具体参数值（如数值、阈值、时长），而非仅笼统描述
+method: ai
+evidence:
+- llm_response_samples
+- rubric_criteria
+expect: pass
+status: rejected
+source: LLM生成（deepseek-chat，待审）
+review_note: 交给用户自行判断调整，ai只可给出该方面的建议

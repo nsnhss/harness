@@ -1,0 +1,10 @@
+id: TC-0009
+target: 跳跃预输入
+check: 落地前 100ms 内按下跳跃，落地后立即起跳
+method: human
+evidence:
+- screen_recording
+- input_log
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）

@@ -1,0 +1,11 @@
+id: TC-0025
+target: 顾问层方案可执行性（资源）
+check: 方案中列出的每个资源制作项均标注了负责人、交付格式与截止日期，无缺失字段
+method: auto
+evidence:
+- advisor_plan.md
+- resource_task_list.csv
+expect: pass
+status: rejected
+source: LLM生成（deepseek-chat，待审）
+review_note: 假设方案里有"资源任务清单 CSV"这种产物——我们的方案是 Markdown，而且单人项目标"负责人"没意义

@@ -1,0 +1,10 @@
+id: TC-0005
+target: 存档健壮性
+check: 存档写入过程中强制退出，重启后存档可读且不损坏
+method: human
+evidence:
+- save_files
+- crash_log
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）

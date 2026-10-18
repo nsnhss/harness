@@ -1,0 +1,9 @@
+id: TC-0008
+target: 加载性能
+check: 从启动到主菜单可操作 ≤5 秒
+method: ai
+evidence:
+- boot_log
+expect: pass
+status: active
+source: LLM生成（kimi-cli 外壳，待审）
